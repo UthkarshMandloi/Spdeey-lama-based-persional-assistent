@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Speedy J.A.R.V.I.S HUD</title>
+    <link rel="stylesheet" href="style.css">
+    <script type="text/javascript" src="/eel.js"></script>
+</head>
+<body>
+    <div class="hex-bg"></div>
+
+    <header>
+        <div class="time-box">
+            <span id="time-text">00:00</span>
+            <span id="date-text" class="orange">SUNDAY</span>
+        </div>
+        <div class="weather-box">
+            <span id="weather-text">28°C Mostly Cloudy</span>
+        </div>
+        <div class="header-right">
+            <span>JARVIS SYSTEM </span>
+            <span id="ai-status" class="cyan">ONLINE</span>
+        </div>
+    </header>
+
+    <div class="hud-container">
+        <!-- LEFT PANEL -->
+        <div class="panel left-panel">
+            <div class="panel-box">
+                <div class="box-title">SYSTEM PROCESSES (CPU)</div>
+                <ul class="process-list" id="cpu-list"></ul>
+            </div>
+            <div class="panel-box">
+                <div class="box-title">SYSTEM PROCESSES (RAM)</div>
+                <ul class="process-list" id="ram-list"></ul>
+            </div>
+            <div class="panel-box">
+                <div class="box-title">STORAGE & MEMORY</div>
+                <div class="bar-container">
+                    <label>RAM <span id="ram-pct" class="orange">0%</span></label>
+                    <div class="bar"><div id="ram-bar" class="fill"></div></div>
+                </div>
+                <div class="bar-container">
+                    <label>CPU <span id="cpu-pct" class="cyan">0%</span></label>
+                    <div class="bar"><div id="cpu-bar" class="fill"></div></div>
+                </div>
+                <div class="bar-container">
+                    <label>GPU <span id="gpu-pct" class="cyan">0%</span></label>
+                    <div class="bar"><div id="gpu-bar" class="fill"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- CENTER PANEL -->
+        <div class="center-panel">
+            <div class="iron-man-container">
+                <div class="iron-man-head"></div>
+                <div class="iron-man-shoulders"></div>
+                <div class="arc-reactor" id="arc-reactor">
+                    <div class="core"></div>
+                    <div class="ring outer-ring"></div>
+                    <div class="ring dashed-ring"></div>
+                    <div class="ring inner-ring"></div>
+                </div>
+            </div>
+            <div class="status-box">
+                <div class="status-text" id="status-text">SYSTEM STANDBY</div>
+                <div class="subtitle" id="subtitle-text">Awaiting Command...</div>
+            </div>
+        </div>
+
+        <!-- RIGHT PANEL -->
+        <div class="panel right-panel">
+            <div class="radar-container">
+                <div class="radar">
+                    <div class="sweep"></div>
+                </div>
+                <div class="radar-text">SCANNING...</div>
+            </div>
+            
+            <div class="panel-box">
+                <div class="box-title">NETWORK SENSORS</div>
+                <div class="net-stats">
+                    <div>UPLOAD: <span id="net-up" class="orange">0.00</span> MB/s</div>
+                    <div>DOWNLOAD: <span id="net-down" class="cyan">0.00</span> MB/s</div>
+                </div>
+            </div>
+
+            <div class="panel-box">
+                <div class="box-title">HARDWARE SENSORS</div>
+                <ul class="hardware-list">
+                    <li>BATTERY: <span id="batt-text" class="cyan">100%</span></li>
+                    <li>FAN SPEED: <span id="fan-text" class="orange">2250 RPM</span></li>
+                    <li>GPU TEMP: <span id="gpu-temp-text" class="cyan">0°C</span></li>
+                </ul>
+            </div>
+
+            <div class="panel-box">
+                <div class="box-title">PRIVACY MONITORS</div>
+                <div class="privacy-section">
+                    <label>AUDIO OUT</label>
+                    <div id="audio-list" class="cyan">None</div>
+                </div>
+                <div class="privacy-section">
+                    <label>MIC / CAMERA</label>
+                    <div id="cam-list" class="orange">None</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
